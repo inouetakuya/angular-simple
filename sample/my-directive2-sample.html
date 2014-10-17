@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>リスト14::isolate scopeを使う</title>
+  </head>
+  <body>
+    <div ng-app="myApp">
+      <div ng-controller="MyCtrl">
+        <my-directive2 data="first"></my-directive2>
+        <my-directive2 data="second"></my-directive2>
+      </div>
+    </div>
+    <p>
+    注: 外部ファイルをXHRで読み込むため、HTTPサーバー上で動かしてください。<br>例えば、Rubyが入っていれば、以下のコマンドをこのファイルがあるディレクトリで実行するとローカルの5000番ポートでHTTPサーバーが起動します。<br>http://localhost:5000をブラウザで開き、このファイルのリンクを選択すれば実行できます。
+    <pre><code>ruby -run -e httpd -- --port=5000 .</code></pre>
+    </p>
+    <script src="./lib/angular.min.js"></script>
+    <script src="./my-directive2.js"></script>
+    <script>
+      angular.module("myApp", ["myDirectives"]);
+    </script>
+  </body>
+</html>

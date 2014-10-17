@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>リスト12::ディレクティブの定義</title>
+  </head>
+  <body>
+    <div ng-app="myApp">
+      <div ng-controller="MyCtrl">
+        <div my-directive1></div>
+      </div>
+    </div>
+    <p>
+    注: 外部ファイルをXHRで読み込むため、HTTPサーバー上で動かしてください。<br>例えば、Rubyが入っていれば、以下のコマンドをこのファイルがあるディレクトリで実行するとローカルの5000番ポートでHTTPサーバーが起動します。<br>http://localhost:5000をブラウザで開き、このファイルのリンクを選択すれば実行できます。
+    <pre><code>ruby -run -e httpd -- --port=5000 .</code></pre>
+    </p>
+
+    <script src="./lib/angular.min.js"></script>
+    <script src="./my-directive1.js"></script>
+    <script>
+      angular.module("myApp", ["myDirectives"]);
+    </script>
+  </body>
+</html>
