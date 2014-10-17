@@ -1,0 +1,24 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>リスト11::定義したサービスの利用</title>
+  </head>
+  <body>
+    <div ng-app="myApp">
+      <div ng-controller="MyCtrl">
+        <span>Hello {{description}}!</span><!-- "This is myService"に置き換わる -->
+      </div>
+    </div>      
+    <script src="./lib/angular.min.js"></script>
+    <script src="./service-sample.js"></script>
+    <script>
+      angular.module('myControllers', ['myServices'])
+      .controller('MyCtrl', ['$scope', 'myService', function($scope, myService) {
+          $scope.description = myService.description;
+      }]);
+
+      angular.module("myApp", ["myControllers"]);
+    </script>
+  </body>
+</html>

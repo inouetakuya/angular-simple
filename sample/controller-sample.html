@@ -1,0 +1,19 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>リスト8::</title>
+  </head>
+  <body>
+    <div ng-app="myApp">
+      <div ng-controller="MyCtrl">
+        <span>Hello {{name}}!</span><!-- "world"に置き換わる -->
+      </div>
+    </div>      
+    <script src="./lib/angular.min.js"></script>
+    <script src="./controller-sample.js"></script>
+    <script>
+      angular.module("myApp", ["myControllers"]);
+    </script>
+  </body>
+</html>

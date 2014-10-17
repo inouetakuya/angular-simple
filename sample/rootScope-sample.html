@@ -1,0 +1,21 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>リスト6::ルートスコープは省略可能</title>
+  </head>
+  <body>
+    <div ng-app="myApp">
+      <div ng-controller="MyCtrl1">
+        Hello {{name}}!
+      </div>
+      <div ng-controller="MyCtrl2">
+        Hello {{name}}!
+        <br>
+        Your age is {{age}}.<!-- MyCtrl1で定義された値を利用可能 -->
+      </div>
+    </div>
+    <script src="./lib/angular.min.js"></script>
+    <script src="./rootScope-sample.js"></script>
+  </body>
+</html>
